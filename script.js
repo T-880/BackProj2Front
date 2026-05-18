@@ -46,5 +46,50 @@ function displayMenu(items) {
 
 }
 
+//Månadens pizza
+async function loadMonthlySpecial() {
+
+  try {
+
+    const res = await fetch("http://localhost:5000/api/menu");
+
+    const data = await res.json();
+
+    // Hittar pizzan som är special
+    const special = data.find(item => item.monthly_special === true);
+
+    const container = document.getElementById("special-container");
+
+    // Om ingen specialpizza finns
+    if (!special) {
+
+      container.innerHTML = `
+        <p>Ingen månadens pizza just nu.</p>
+      `;
+
+      return;
+    }
+
+    // Renderar specialpizza
+    container.innerHTML = `
+      <div class="special-card">
+
+        <h3>${special.title}</h3>
+
+        <p>${special.description}</p>
+
+        <p>${special.price} kr</p>
+
+      </div>
+    `;
+
+  } catch (err) {
+
+    console.error("Kunde inte hämta månadens pizza:", err);
+  }
+}
+
+loadMonthlySpecial();
+
 // Kör funktion
 getMenu();

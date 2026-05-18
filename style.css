@@ -242,3 +242,29 @@ footer p {
   font-weight: bold;
   font-size: 1.2rem;
 }
+
+/* Månadens Pizza */
+
+.monthly-special {
+  padding: 6rem 2rem;
+  text-align: center;
+  background-color: #111111;
+  color: #E7D7C9;
+}
+
+.special-card {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid #8B2E2E;
+  border-radius: 10px;
+}
+
+.special-card h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.special-card p {
+  margin-bottom: 1rem;
+}
