@@ -126,7 +126,7 @@ header {
 
 .hero-content h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 4.5rem;
+  font-size: 4rem;
   line-height: 1.1;
   margin-bottom: 25px;
   color: #F5F5F5;
@@ -199,55 +199,80 @@ footer p {
 /* Meny */
 
 .menu-section {
-  padding: 80px 20px;
+  padding: 100px 20px;
   max-width: 1200px;
   margin: auto;
 }
 
 .menu-section h1 {
   text-align: center;
-  margin-bottom: 50px;
-
+  margin-bottom: 60px;
   font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
-
+  font-size: 3.8rem;
   color: #E7D7C9;
+  letter-spacing: 1px;
 }
 
+/* Meny container*/
 #menu-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  gap: 35px;
 }
 
+/* meny kort */
 .menu-card {
   background-color: #1B1B1B;
-  padding: 30px;
-  border-radius: 12px;
+  padding: 32px;
+  border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #8B2E2E, transparent);
+  opacity: 0.7;
 }
 
 .menu-card:hover {
-  transform: translateY(-5px);
-  border-color: #d62828;
+  transform: translateY(-6px);
+  border-color: #8B2E2E;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
 }
 
 .menu-card h2 {
   font-family: 'Playfair Display', serif;
   color: #E7D7C9;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
+  font-size: 1.4rem;
 }
 
 .menu-card p {
   color: #CCCCCC;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
+/* Pris */
 .menu-card span {
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: #F5F5F5;
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(139, 46, 46, 0.15);
+  border: 1px solid rgba(139, 46, 46, 0.4);
+  border-radius: 6px;
 }
 
 /* Månadens Pizza */
@@ -273,10 +298,12 @@ footer p {
   border: 1px solid #d62828;
   border-radius: 12px;
   transition: 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 .special-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
 }
 
 .special-card h3 {
