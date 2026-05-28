@@ -433,14 +433,19 @@ footer p {
   }
 
   .navbar {
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .nav-links {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
   }
+
+  .logo {
+  flex-shrink: 0;
+}
 
   .hero-content h1 {
     font-size: 3rem;
@@ -457,4 +462,48 @@ footer p {
     font-size: 2.5rem;
   }
 
+}
+
+/* Hamburger */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 2px;
+  background-color: #F5F5F5;
+  transition: 0.3s ease;
+}
+
+/* Mobil */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+
+    background-color: #000;
+    flex-direction: column;
+    gap: 15px;
+
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
 }
