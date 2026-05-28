@@ -34,6 +34,8 @@ function displayMenu(items) {
     
       <h2>${item.title}</h2>
 
+      ${item.imageUrl ? `<img src="http://localhost:5000/${item.imageUrl}" alt="${item.title}">` : ""}
+
       <p>${item.description}</p>
 
       <span>${item.price} kr</span>

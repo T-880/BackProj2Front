@@ -263,6 +263,15 @@ footer p {
   line-height: 1.6;
 }
 
+.menu-card img {
+  width: 100%;
+  height: 270px;          
+  object-fit: cover;      
+  border-radius: 10px;
+  margin: 15px 0;
+  display: block;
+}
+
 /* Pris */
 .menu-card span {
   font-weight: 600;
@@ -506,4 +515,13 @@ footer p {
   .nav-links.active {
     display: flex;
   }
+
+.menu-item img {
+  width: 100%;
+  height: 270px;          
+  object-fit: cover;      
+  border-radius: 10px;
+  margin: 15px 0;
+  display: block;
+}
 }
