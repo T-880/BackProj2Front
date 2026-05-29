@@ -78,6 +78,8 @@ async function loadMonthlySpecial() {
 
         <h3>${special.title}</h3>
 
+        ${special.imageUrl? `<img src="http://localhost:5000/${special.imageUrl}" alt="${special.title}">`: ""}
+
         <p>${special.description}</p>
 
         <p>${special.price} kr</p>

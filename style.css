@@ -23,10 +23,13 @@ header {
   background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(10px);
   padding: 20px 40px;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(214, 40, 40, 0.35);
+  box-shadow: 0 2px 15px rgba(214, 40, 40, 0.08);
 }
 
 .navbar {
@@ -186,10 +189,16 @@ header {
 /* Footer */
 
 footer {
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.8);
   text-align: center;
-  padding: 30px;
-  margin-top: 50px;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-top: 1px solid rgba(214, 40, 40, 0.35);
+  box-shadow: 0 -2px 15px rgba(214, 40, 40, 0.08);
 }
 
 footer p {
@@ -325,6 +334,15 @@ footer p {
 .special-card p {
   margin-bottom: 1rem;
   color: #CCCCCC;
+}
+
+.special-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 15px 0;
+  display: block;
 }
 
 /* About */
@@ -524,4 +542,23 @@ footer p {
   margin: 15px 0;
   display: block;
 }
+}
+
+/* bak-vid */
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* startsidan */
+
+.home-page {
+  overflow: hidden;
+  height: 100vh;
 }
