@@ -1,4 +1,5 @@
 const menuContainer = document.getElementById("menu-container");
+const drinkContainer = document.getElementById("drink-container");
 
 // Hämta meny från API
 async function getMenu() {
@@ -9,7 +10,8 @@ async function getMenu() {
 
     const menuItems = await response.json();
 
-    displayMenu(menuItems);
+    displayMenu(menuItems.filter(item => item.category === "pizza"));
+    displayDrinks(menuItems.filter(item => item.category === "drink"));
 
   } catch (error) {
 
@@ -22,9 +24,17 @@ async function getMenu() {
 // Skriver ut meny på sidan
 function displayMenu(items) {
 
-  menuContainer.innerHTML = "";
+  const pizzaContainer = document.getElementById("menu-container");
+  const drinkContainer = document.getElementById("drink-container");
 
-  items.forEach(item => {
+  pizzaContainer.innerHTML = "";
+  drinkContainer.innerHTML = "";
+
+  const pizzas = items.filter(item => item.category === "pizza");
+  const drinks = items.filter(item => item.category === "drink");
+
+  // Pizzor
+  pizzas.forEach(item => {
 
     const menuCard = document.createElement("div");
 
@@ -34,7 +44,10 @@ function displayMenu(items) {
     
       <h2>${item.title}</h2>
 
-      ${item.imageUrl ? `<img src="http://localhost:5000/${item.imageUrl}" alt="${item.title}">` : ""}
+      ${item.imageUrl
+        ? `<img src="http://localhost:5000/${item.imageUrl}" alt="${item.title}">`
+        : ""
+      }
 
       <p>${item.description}</p>
 
@@ -42,7 +55,28 @@ function displayMenu(items) {
 
     `;
 
-    menuContainer.appendChild(menuCard);
+    pizzaContainer.appendChild(menuCard);
+
+  });
+
+  // Drycker
+  drinks.forEach(item => {
+
+    const drinkCard = document.createElement("div");
+
+    drinkCard.classList.add("drink-card");
+
+    drinkCard.innerHTML = `
+    
+      <h2>${item.title}</h2>
+
+      <p>${item.description || ""}</p>
+
+      <span>${item.price} kr</span>
+
+    `;
+
+    drinkContainer.appendChild(drinkCard);
 
   });
 
@@ -78,7 +112,7 @@ async function loadMonthlySpecial() {
 
         <h3>${special.title}</h3>
 
-        ${special.imageUrl? `<img src="http://localhost:5000/${special.imageUrl}" alt="${special.title}">`: ""}
+        ${special.imageUrl ? `<img src="http://localhost:5000/${special.imageUrl}" alt="${special.title}">` : ""}
 
         <p>${special.description}</p>
 
@@ -105,3 +139,31 @@ const navLinks = document.querySelector(".nav-links");
 hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
+
+// Skriver ut dryck
+function displayDrinks(items) {
+
+  drinkContainer.innerHTML = "";
+
+  items.forEach(item => {
+
+    const drinkCard = document.createElement("div");
+
+    drinkCard.classList.add("menu-card");
+
+    drinkCard.innerHTML = `
+    
+      <h2>${item.title}</h2>
+
+      ${item.imageUrl ? `<img src="http://localhost:5000/${item.imageUrl}" alt="${item.title}">` : ""}
+
+      <p>${item.description}</p>
+
+      <span>${item.price} kr</span>
+
+    `;
+
+    drinkContainer.appendChild(drinkCard);
+
+  });
+}
