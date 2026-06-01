@@ -167,3 +167,51 @@ function displayDrinks(items) {
 
   });
 }
+
+// Bokningsformulär
+const bookingForm = document.getElementById("bookingForm");
+
+if (bookingForm) {
+
+  bookingForm.addEventListener("submit", (e) => {
+
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+    const guests = document.getElementById("guests").value;
+    const email = document.getElementById("email").value;
+
+    const successBox = document.getElementById("booking-success");
+
+    successBox.style.display = "block";
+
+    successBox.innerHTML = `
+                
+                    <h3>Tack för din bokning <strong>${name}</strong>!</h3>
+
+                    <p>
+                        Vi har reserverat en bokning för
+                        <strong>${guests}</strong>
+                        personer den
+                        <strong>${date}</strong>
+                        kl.
+                        <strong>${time}</strong>.
+                    </p>
+
+                    <p>
+                        En bekräftelse har skickats till angiven e-post och telefonnummer.
+                    </p>
+
+                `;
+
+    bookingForm.reset();
+
+  });
+
+}
+
+document.querySelectorAll('input[type="date"], input[type="time"]').forEach(input => {
+  input.addEventListener("click", () => input.showPicker?.());
+});

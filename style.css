@@ -113,7 +113,7 @@ header {
       to bottom,
       rgba(0,0,0,0.55),
       rgba(0,0,0,0.75)
-    );
+      );
 
   top: 0;
   left: 0;
@@ -268,8 +268,8 @@ footer p {
 
 .menu-card img {
   width: 100%;
-  height: 270px;          
-  object-fit: cover;      
+  height: 270px;
+  object-fit: cover;
   border-radius: 10px;
   margin: 15px 0;
   display: block;
@@ -460,8 +460,8 @@ footer p {
   }
 
   .logo {
-  flex-shrink: 0;
-}
+    flex-shrink: 0;
+  }
 
   .hero-content h1 {
     font-size: 3rem;
@@ -523,14 +523,14 @@ footer p {
     display: flex;
   }
 
-.menu-item img {
-  width: 100%;
-  height: 270px;          
-  object-fit: cover;      
-  border-radius: 10px;
-  margin: 15px 0;
-  display: block;
-}
+  .menu-item img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 15px 0;
+    display: block;
+  }
 }
 
 /* bak-vid */
@@ -603,9 +603,7 @@ body:not(.home-page) .menu-section {
   padding: 18px;
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.05);
-
   text-align: center;
-
   transition: 0.3s ease;
 }
 
@@ -624,15 +622,121 @@ body:not(.home-page) .menu-section {
 
 .drink-card span {
   display: inline-block;
-
   padding: 5px 10px;
-
   background: rgba(139, 46, 46, 0.15);
-
   border: 1px solid rgba(139, 46, 46, 0.4);
-
   border-radius: 6px;
-
   font-size: 0.95rem;
   font-weight: 600;
+}
+
+/* Booking */
+
+.booking-page {
+  max-width: 900px;
+  margin: auto;
+  padding: 140px 20px 120px;
+}
+
+.booking-hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.booking-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  color: #E7D7C9;
+  margin-bottom: 20px;
+}
+
+.booking-hero p {
+  max-width: 700px;
+  margin: auto;
+  color: #CCCCCC;
+  font-size: 1.1rem;
+}
+
+.booking-section {
+  background-color: #1B1B1B;
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.booking-form input,
+.booking-form textarea,
+.booking-form select {
+  padding: 15px;
+  background-color: #111111;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.booking-form input:focus,
+.booking-form textarea:focus,
+.booking-form select:focus {
+  border-color: #d62828;
+  box-shadow: 0 0 10px rgba(214, 40, 40, 0.2);
+}
+
+.booking-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.booking-form button {
+  background-color: #8B2E2E;
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.booking-form button:hover {
+  background-color: transparent;
+  border: 1px solid #8B2E2E;
+}
+
+.booking-success {
+  display: none;
+  margin-top: 30px;
+  padding: 25px;
+  background: rgba(139, 46, 46, 0.12);
+  border: 1px solid rgba(139, 46, 46, 0.35);
+  border-radius: 12px;
+  color: #E7D7C9;
+}
+
+.booking-success h3 {
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+}
+
+@media (max-width: 768px) {
+
+  .booking-hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .booking-section {
+    padding: 25px;
+  }
+
 }

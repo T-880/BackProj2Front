@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Boka Bord | Forno Nero</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                Forno Nero
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="menu.html">Meny</a></li>
+                <li><a href="about.html">Om oss</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="booking.html">Boka bord</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main class="booking-page">
+
+        <section class="booking-hero">
+
+            <h1>Boka Bord</h1>
+
+            <p>
+                Reservera ett bord hos Forno Nero och upplev äkta napolitansk pizza
+                i en varm och elegant miljö.
+            </p>
+
+        </section>
+
+        <section class="booking-section">
+
+            <form id="bookingForm" class="booking-form">
+
+                <input type="text" id="name" placeholder="Namn" required>
+
+                <input type="tel" id="phone" placeholder="Telefonnummer" required>
+
+                <input type="email" id="email" placeholder="E-postadress" required>
+
+                <label for="date">Datum</label>
+                <input type="date" id="date" required>
+
+                <label for="time">Tid</label>
+                <input type="time" id="time" required>
+
+                <select id="guests" required>
+                    <option value="">Antal gäster (är ni fler än 8 personer? Vänligen ring oss på 0771-123456)</option>
+                    <option value="1">1 person</option>
+                    <option value="2">2 personer</option>
+                    <option value="3">3 personer</option>
+                    <option value="4">4 personer</option>
+                    <option value="5">5 personer</option>
+                    <option value="6">6 personer</option>
+                    <option value="7">7 personer</option>
+                    <option value="8">8 personer</option>
+                </select>
+
+                <textarea id="message" placeholder="Övriga önskemål (valfritt)"></textarea>
+
+                <button type="submit">
+                    Boka bord
+                </button>
+
+            </form>
+
+            <div id="booking-success" class="booking-success"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>
+            © 2026 Forno Nero
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
