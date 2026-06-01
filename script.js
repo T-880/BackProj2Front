@@ -215,3 +215,38 @@ if (bookingForm) {
 document.querySelectorAll('input[type="date"], input[type="time"]').forEach(input => {
   input.addEventListener("click", () => input.showPicker?.());
 });
+
+// Kontaktformulär
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+
+  contactForm.addEventListener("submit", (e) => {
+
+    e.preventDefault();
+
+    const name = contactForm.querySelector('input[type="text"]').value;
+    const email = contactForm.querySelector('input[type="email"]').value;
+    const message = contactForm.querySelector('textarea').value;
+
+    const successBox = document.getElementById("contact-success");
+
+    successBox.style.display = "block";
+
+    successBox.innerHTML = `
+      <h3>Tack för ditt meddelande, ${name}!</h3>
+
+      <p>
+        Vi har mottagit ditt meddelande och återkommer till
+        <strong>${email}</strong> så snart vi kan.
+      </p>
+
+      <p>
+        Vi återkopplar vanligtvis inom 24 timmar.
+      </p>
+    `;
+
+    contactForm.reset();
+  });
+
+}

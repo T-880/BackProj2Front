@@ -22,9 +22,9 @@
   <header>
     <nav class="navbar">
 
-      <div class="logo">
+      <a href="index.html" class="logo">
         Forno Nero
-      </div>
+      </a>
 
       <div class="hamburger" id="hamburger">
         <span></span>
@@ -35,6 +35,7 @@
       <ul class="nav-links">
         <li><a href="index.html">Hem</a></li>
         <li><a href="menu.html">Meny</a></li>
+        <li><a href="booking.html">Boka bord</a></li>
         <li><a href="about.html">Om oss</a></li>
         <li><a href="contact.html">Kontakt</a></li>
       </ul>
@@ -42,9 +43,9 @@
     </nav>
   </header>
 
-  <main class="contact">
+  <main class="contact-page">
 
-    <section>
+    <section class="contact-hero">
       <h1>Kontakt</h1>
 
       <div class="contact-info">
@@ -62,12 +63,14 @@
       <div class="contact-form">
         <h2>Skicka meddelande</h2>
 
-        <form>
+        <form id="contactForm">
           <input type="text" placeholder="Namn" required>
           <input type="email" placeholder="E-post" required>
           <textarea placeholder="Meddelande"></textarea>
           <button type="submit">Skicka</button>
         </form>
+
+        <div id="contact-success" class="booking-success"></div>
 
       </div>
 
@@ -76,8 +79,19 @@
   </main>
 
   <footer>
-    <p>© 2026 Forno Nero</p>
+
+    <p>
+      Öppettider:
+      Mån–Tors: 12:00–21:00. Fre–Sön: 12:00–23:00.
+    </p>
+
+    <p>
+      © 2026 Forno Nero
+    </p>
+
   </footer>
+
+  <script src="script.js"></script>
 
 </body>
 

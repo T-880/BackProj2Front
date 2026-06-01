@@ -44,6 +44,8 @@ header {
   font-weight: 700;
   color: #d62828;
   letter-spacing: 2px;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .nav-links {
@@ -739,4 +741,37 @@ body:not(.home-page) .menu-section {
     padding: 25px;
   }
 
+}
+
+/* about-fix */
+.about-page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 140px 20px 120px;
+}
+
+/* kontakt-fix */
+.contact-page {
+  max-width: 900px;
+  margin: auto;
+  padding: 140px 20px 120px;
+}
+
+.contact-page h1,
+.contact-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  margin-bottom: 40px;
+  color: #E7D7C9;
+  text-align: center;
+}
+
+.contact-page h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+  color: #E7D7C9;
+}
+
+.contact-page p {
+  color: #CCCCCC;
 }
