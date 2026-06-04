@@ -7,9 +7,11 @@
 
     <title>Boka Bord | Forno Nero</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <!-- Typsnitt för designprofil -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
         rel="stylesheet">
@@ -19,20 +21,24 @@
 
 <body>
 
+    <!-- Navigationsheader -->
     <header>
 
         <nav class="navbar">
 
+            <!-- Logotyp -->
             <a href="index.html" class="logo">
                 Forno Nero
             </a>
 
+            <!-- Hamburger-meny för mobil -->
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
 
+            <!-- Navigationslänkar -->
             <ul class="nav-links">
                 <li><a href="index.html">Hem</a></li>
                 <li><a href="menu.html">Meny</a></li>
@@ -47,6 +53,7 @@
 
     <main class="booking-page">
 
+        <!-- Hero-sektion för bokning -->
         <section class="booking-hero">
 
             <h1>Boka Bord</h1>
@@ -58,6 +65,7 @@
 
         </section>
 
+        <!-- Bokningsformulär -->
         <section class="booking-section">
 
             <h2 class="visually-hidden">Bokningsformulär</h2>
@@ -76,6 +84,7 @@
                 <label for="time">Tid</label>
                 <input type="time" id="time" required>
 
+                <!-- Antal gäster -->
                 <select id="guests" required>
                     <option value="">Antal gäster (är ni fler än 8 personer? Vänligen kontakta oss genom vår
                         kontakt-sida)</option>
@@ -97,12 +106,14 @@
 
             </form>
 
+            <!-- Feedback vid lyckad bokning -->
             <div id="booking-success" class="booking-success"></div>
 
         </section>
 
     </main>
 
+    <!-- Footer -->
     <footer>
 
         <p>
@@ -116,6 +127,7 @@
 
     </footer>
 
+    <!-- Script för interaktivitet -->
     <script src="script.js"></script>
 
 </body>

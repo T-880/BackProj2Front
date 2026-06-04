@@ -1,7 +1,7 @@
 const menuContainer = document.getElementById("menu-container");
 const drinkContainer = document.getElementById("drink-container");
 
-// Hämta meny från API
+// Hämtar menydata från backend-API
 async function getMenu() {
 
   try {
@@ -10,6 +10,7 @@ async function getMenu() {
 
     const menuItems = await response.json();
 
+    // Filtrerar ut pizza och dryck
     displayMenu(menuItems.filter(item => item.category === "pizza"));
     displayDrinks(menuItems.filter(item => item.category === "drink"));
 
@@ -21,7 +22,7 @@ async function getMenu() {
 
 }
 
-// Skriver ut meny på sidan
+// Renderar pizzor på sidan
 function displayMenu(items) {
 
   const pizzaContainer = document.getElementById("menu-container");
@@ -33,7 +34,7 @@ function displayMenu(items) {
   const pizzas = items.filter(item => item.category === "pizza");
   const drinks = items.filter(item => item.category === "drink");
 
-  // Pizzor
+  // Skapar UI-kort för pizzor
   pizzas.forEach(item => {
 
     const menuCard = document.createElement("div");
@@ -59,7 +60,7 @@ function displayMenu(items) {
 
   });
 
-  // Drycker
+  // Skapar UI-kort för drycker
   drinks.forEach(item => {
 
     const drinkCard = document.createElement("div");
@@ -82,7 +83,7 @@ function displayMenu(items) {
 
 }
 
-//Månadens pizza
+// Hämtar och visar månadens pizza
 async function loadMonthlySpecial() {
 
   try {
@@ -91,7 +92,7 @@ async function loadMonthlySpecial() {
 
     const data = await res.json();
 
-    // Hittar pizzan som är special
+    // Letar upp markerad specialpizza
     const special = data.find(item => item.monthly_special === true);
 
     const container = document.getElementById("special-container");
@@ -127,9 +128,8 @@ async function loadMonthlySpecial() {
   }
 }
 
+// Kör initial laddning av special och meny
 loadMonthlySpecial();
-
-// Kör funktion
 getMenu();
 
 // Hamburger-meny
@@ -140,7 +140,7 @@ hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
 
-// Skriver ut dryck
+// Renderar drycker separat 
 function displayDrinks(items) {
 
   drinkContainer.innerHTML = "";
@@ -168,7 +168,7 @@ function displayDrinks(items) {
   });
 }
 
-// Bokningsformulär
+// Bokningsformulär som hanterar UI-feedback
 const bookingForm = document.getElementById("bookingForm");
 
 if (bookingForm) {
@@ -177,6 +177,7 @@ if (bookingForm) {
 
     e.preventDefault();
 
+    // Hämtar värden från formuläret
     const name = document.getElementById("name").value;
     const date = document.getElementById("date").value;
     const time = document.getElementById("time").value;
@@ -185,6 +186,7 @@ if (bookingForm) {
 
     const successBox = document.getElementById("booking-success");
 
+    // Visar bekräftelse direkt i UI
     successBox.style.display = "block";
 
     successBox.innerHTML = `
@@ -212,11 +214,12 @@ if (bookingForm) {
 
 }
 
+// Förbättrad datum/tid-picker (om webbläsaren stödjer det)
 document.querySelectorAll('input[type="date"], input[type="time"]').forEach(input => {
   input.addEventListener("click", () => input.showPicker?.());
 });
 
-// Kontaktformulär
+// Kontaktformulär – visar bekräftelse (ingen backend-anslutning)
 const contactForm = document.getElementById("contactForm");
 
 if (contactForm) {
@@ -231,6 +234,7 @@ if (contactForm) {
 
     const successBox = document.getElementById("contact-success");
 
+    // Visar bekräftelse i UI
     successBox.style.display = "block";
 
     successBox.innerHTML = `
